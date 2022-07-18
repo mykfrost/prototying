@@ -9,7 +9,7 @@ function extend(Child , Parent){
 function Shape(){}
 
 Shape.prototype.duplicate = function(){
-    console.log('duplicate');
+    console.log('duplicate of shape itself');
 }
 function Circle(){}
 
@@ -17,7 +17,7 @@ extend(Circle , Shape);
 
 Circle.prototype.duplicate = function(){
     //adding the other duplicate
-    Shape.prototype.duplicate.call(this);
+   // Shape.prototype.duplicate.call(this);
     console.log('duplicate circle');
 }
 
@@ -31,7 +31,7 @@ extend(Square, Shape);
 
 Square.prototype.duplicate = function(){
     //adding the other duplicate
-    Shape.prototype.duplicate.call(this);
+   // Shape.prototype.duplicate.call(this);
     console.log('duplicate square');
 }
 
@@ -43,10 +43,9 @@ const shapes =  [
 ];
 //iterate objectcs using for of loop
 
-for(let shapes of shape)
-{
+for(let shape of shapes){
     shape.duplicate();
 }
 
 const sq = new Square();
-console.log('SQUARE OBJECT',sq);
+//console.log('SQUARE OBJECT',sq);
