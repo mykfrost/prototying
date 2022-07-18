@@ -16,6 +16,8 @@ function Circle(){}
 extend(Circle , Shape);
 
 Circle.prototype.duplicate = function(){
+    //adding the other duplicate
+    Shape.prototype.duplicate.call(this);
     console.log('duplicate circle');
 }
 const c = new Circle();
