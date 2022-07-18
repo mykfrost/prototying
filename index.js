@@ -16,7 +16,7 @@ function extend(Child , Parent){
 Child.prototype.constructor = Child;
 }
 
-extend(Circle,Shape);
+
 
  function Circle(radius,color){
     Shape.call(this, color);
@@ -25,15 +25,20 @@ extend(Circle,Shape);
 
 //Creat a new cicle object that inherits from shape base object
 
+extend(Circle,Shape);
 
 Circle.prototype.draw = function(){
        console.log('draw');
    }
+  
+
+
 function Square(size){
     this.size = size;
 }
 
 extend(Shape,Shape);
+
 
 const s = new Shape('orange');
 const c = new Circle(2,'red');
